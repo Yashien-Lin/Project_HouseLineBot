@@ -1,0 +1,105 @@
+<form action="/formatvalues" method="get">
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<strong><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></strong>
+
+
+
+<h2>條件設定</h2>  
+
+<font size="4">
+姓名：<input type='text'><br>
+
+<br>  
+  
+目標類別<br>
+<input type="checkbox" value="1" name="Product_1"/> 公寓<br>
+<input type="checkbox" value="2" name="Product_2"/> 華廈<br>
+<input type="checkbox" value="3" name="Product_3"/> 電梯大樓<br> 
+<input type="checkbox" value="3" name="Product_3"/> 套房<br>   
+<input type="checkbox" value="3" name="Product_3"/> 透天厝/別墅<br>
+<input type="checkbox" value="3" name="Product_3"/> 不拘<br>
+<br>  
+ 
+<div class="car-question-answer">
+  車位<br>
+  <input type="radio" value="yes" id="radio_1" name="parking_space"/>
+  <label for="radio_1" class="radio"><span>是</span></label>
+  <input type="radio" value="no" id="radio_2" name="parking_space" />
+  <label for="radio_2" class="radio"><span>否</span></label>
+  <input type="radio" value="no" id="radio_3" name="parking_space" />
+  <label for="radio_3" class="radio"><span>不拘</span></label>   
+</div>  
+<br> 
+
+<div class="room_filter">
+  房數<br>  
+  <input type="radio" name="room" value="0" class="room">  
+  <input type="number" size="6" maxlength="3" class="room" placeholder="最少" value="">
+  <span> - </span>
+  <input type="number" size="6" maxlength="3" class="room" placeholder="最多" value="">
+  <span> 房</span><br>
+  <input type="radio" value="no"  name="room" />
+  <label class="room_radio"><span>不拘</span></label> 
+</div>  
+<br>  
+ 
+<div class="houes_age_filter">
+  屋齡<br>  
+  <input type="radio" name="houes_age" value="0" class="houes_age">  
+  <input type="number" maxlength="2" class="houes_age" placeholder="最低" value="" id="number">
+  <span> - </span>
+  <input type="number" maxlength="2" class="houes_age" placeholder="最高" value="" id="number">  
+  <span> 年</span><br>
+  <input type="radio" value="no"  name="houes_age" />
+  <label class="floor_radio"><span>不拘</span></label> 
+</div>  
+<br>  
+ 
+  
+<div class="foor_filter">
+  樓層<br>  
+  <input type="radio" name="floor" value="0" class="floor">  
+  <input type="text" size="6" maxlength="3" class="floor" placeholder="最低" value="">
+  <span> - </span>
+  <input type="text" size="6" maxlength="3" class="floor" placeholder="最高" value="">
+  <span> 樓</span><br>
+  <input type="radio" value="no"  name="floor" />
+  <label class="floor_radio"><span>不拘</span></label> 
+</div>  
+<br>  
+  
+<div class="direction">
+  座向<br>
+  <input type="checkbox" value="1" name="direction_west"/> 朝西<br>
+  <input type="checkbox" value="2" name="direction_east"/> 朝東<br>
+  <input type="checkbox" value="3" name="direction_north"/> 朝北<br> 
+  <input type="checkbox" value="4" name="direction_south"/> 朝南<br>   
+  <input type="checkbox" value="5" name="direction_west_north"/> 朝西北<br>
+  <input type="checkbox" value="6" name="direction_east_north"/> 朝東北<br>
+  <input type="checkbox" value="7" name="direction_east_south"/> 朝東南<br>
+  <input type="checkbox" value="8" name="direction_west_south"/> 朝西南<br>
+  <input type="checkbox" value="9" name="direction_nul"/> 不拘<br>  
+</div>    
+  
+<br>  
+  
+<div class="direction">
+  設施<br>
+  <input type="checkbox" value="1" name="facility_park"/> 近公園<br>
+  <input type="checkbox" value="2" name="facility_market"/> 近市場<br>
+  <input type="checkbox" value="3" name="facility_school"/> 近學校<br> 
+  <input type="checkbox" value="4" name="facility_mrt"/> 近捷運<br>   
+  <input type="checkbox" value="5" name="facility_hospital"/> 近醫療機構<br>
+  <input type="checkbox" value="6" name="facility_arrier-free"/> 無障礙空間<br>
+  <input type="checkbox" value="7" name="facility_nul"/> 不拘<br>  
+
+  
+</div>    
+  
+  
+<p><input type='submit' value='送出表單'></p>
+  
+</font><br>  
+  
+</form>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+  <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/style_greywave.css') }}"></strong>
+  <strong><link rel="icon" href="{{ url_for('static', filename='img/house-001.ico') }}"></strong>
+  <title>買房需求| Home Robot</title>
+  <script></script>
+</head>
+<body>
+
+
+  <form action="/format" method="POST">
+
+    <input type="hidden" name="user_id" id="user_id" value={{result}}/>
+    <font color="black"></font>  
+    <!-- <h2>條件設定</h2>   -->
+
+    <!-- 您的暱稱：<input type='text'><br> -->
+
+    <!-- <br>   -->
+
+    <b>行政區</b><br>
+    <input type="checkbox" value="不限" name="zone"/> 不拘<br>
+    <input type="checkbox" value="中正區" name="zone"/> 中正區<br>
+    <input type="checkbox" value="松山區" name="zone"/> 松山區<br>
+    <input type="checkbox" value="信義區" name="zone"/> 信義區<br> 
+    <input type="checkbox" value="大同區" name="zone"/> 大同區<br>   
+    <input type="checkbox" value="內湖區" name="zone"/> 內湖區<br>
+    <input type="checkbox" value="大安區" name="zone"/> 大安區<br>
+    <input type="checkbox" value="士林區" name="zone"/> 士林區<br>
+    <input type="checkbox" value="南港區" name="zone"/> 南港區<br>
+    <input type="checkbox" value="中山區" name="zone"/> 中山區<br>
+    <input type="checkbox" value="萬華區" name="zone"/> 萬華區<br>
+    <input type="checkbox" value="北投區" name="zone"/> 北投區<br>
+    <input type="checkbox" value="文山區" name="zone"/> 文山區<br>
+    <br>  
+
+
+    <b>目標類別</b><br>
+    <input type="checkbox" value="型態不限" name="type"/> 不拘<br>
+    <input type="checkbox" value="公寓" name="type"/> 公寓<br>
+    <input type="checkbox" value="華廈" name="type"/> 華廈<br>
+    <input type="checkbox" value="電梯大樓" name="type"/> 電梯大樓<br> 
+    <input type="checkbox" value="套房" name="type"/> 套房<br>   
+    <input type="checkbox" value="別墅" name="type"/> 別墅<br>
+    <input type="checkbox" value="透天厝" name="type"/> 透天厝<br>
+    <br>  
+
+
+
+  <div class="car-question-answer">
+   <b>車位</b><br>
+    <input type="radio" value="yes" id="radio_1" name="parking"/>
+    <label for="radio_1" class="radio"><span>是</span></label>
+    <input type="radio" value="no" id="radio_2" name="parking" />
+    <label for="radio_2" class="radio"><span>否</span></label>
+
+  </div>  
+  <br> 
+
+
+<div class="price_filter">
+    <b>總價</b><br>  
+    <input type="radio" id="price" name="price">  
+    <label for="price"><input type="number" min="0" maxlength="5" name="price_lower" placeholder="最低" value="" onfocus='document.getElementById("price").checked = true' required></label>
+    <span> - </span>
+    <input for="price" type="number" maxlength="5" name="price_upper" placeholder="最高" value=""onfocus='document.getElementById("price").checked = true'required>
+    <span> 萬</span><br>
+    <input type="radio" id="price_no" value="0" name="price"/>
+    <label for="price_no" class="price_radio"><span>不拘</span></label> 
+  </div>   
+  <br>  
+
+
+<div class="size_filter">
+    <b>坪數</b><br>  
+    <input type="radio" id="size" name="size">  
+    <label for="size"><input type="number" min="0" maxlength="5" name="size_lower" placeholder="最低" value="" onfocus='document.getElementById("size").checked = true'></label>
+    <span> - </span>
+    <input for="size" type="number" maxlength="4" name="size_upper" placeholder="最高" value=""onfocus='document.getElementById("size").checked = true'>
+    <span> 坪</span><br>
+    <input type="radio" id="size_no" value="0" name="size"/>
+    <label for="size_no" class="size_radio"><span>不拘</span></label> 
+  </div>   
+  <br>  
+  
+  
+
+<div class="age_filter">
+    <b>屋齡</b><br>  
+    <input type="radio" id="age" name="age">  
+    <label for="age"><input type="number" min="0" maxlength="2" name="age_lower" placeholder="最低" value="" onfocus='document.getElementById("age").checked = true'></label>
+    <span> - </span>
+    <input for="age" type="number" maxlength="2" name="age_upper" placeholder="最高" value=""onfocus='document.getElementById("age").checked = true'>
+    <span> 年</span><br>
+    <input type="radio" id="age_no" value="0" name="age"/>
+    <label for="age_no" class="age_radio"><span>不拘</span></label> 
+  </div>   
+  <br>  
+
+
+<div class="foor_filter">
+    <b>樓層</b><br>  
+    <input type="radio" id="floors" name="floors">  
+    <label for="floors"><input type="number" min="0" maxlength="2" name="floor_lower" placeholder="最低" value="" onfocus='document.getElementById("floors").checked = true'></label>
+    <span> - </span>
+    <input for="floors" type="number" max="30" maxlength="2" name="floor_upper" placeholder="最高" value=""onfocus='document.getElementById("floors").checked = true'>
+    <span> 樓</span><br>
+    <input type="radio" id="floors_no" value="0" name="floors"/>
+    <label for="floors_no" class="floor_radio"><span>不拘</span></label> 
+  </div>   
+  <br>  
+
+
+
+
+  <div class="room_filter">  
+    <b>房數</b><br>  
+    <input type="radio" id="room" name="room" class="room">  
+    <label for="room"><input type="number" min="0" maxlength="3" class="room" name="room_lower" placeholder="最少" value="" onfocus='document.getElementById("room").checked = true'></label>
+    <span> - </span>
+    <input type="number" max="300" maxlength="3" class="room" name="room_upper" placeholder="最多" value="" onfocus='document.getElementById("room").checked = true'>
+    <span> 房</span><br>
+    <input type="radio" id="room_no" name="room" value="0" />
+    <label for="room_no" class="room_radio"><span>不拘</span></label> 
+  </div>  
+  <br>  
+
+
+
+  <div class="direction">
+    <b>座向</b><br>
+    <input type="checkbox" value="朝西" name="direction"/> 朝西<br>
+    <input type="checkbox" value="朝東" name="direction"/> 朝東<br>
+    <input type="checkbox" value="朝北" name="direction"/> 朝北<br> 
+    <input type="checkbox" value="朝南" name="direction"/> 朝南<br>   
+    <input type="checkbox" value="朝西北" name="direction"/> 朝西北<br>
+    <input type="checkbox" value="朝東北" name="direction"/> 朝東北<br>
+    <input type="checkbox" value="朝東南" name="direction"/> 朝東南<br>
+    <input type="checkbox" value="朝西南" name="direction"/> 朝西南<br>  
+  </div>    
+
+  <br>  
+
+  <div class="facility">
+    <b>設施</b><br>
+    <input type="checkbox" value="近公園" name="facility"/> 近公園<br>
+    <input type="checkbox" value="近市場" name="facility"/> 近市場<br>
+    <input type="checkbox" value="近學校" name="facility"/> 近學校<br> 
+    <input type="checkbox" value="近捷運" name="facility"/> 近捷運<br>   
+    <input type="checkbox" value="近醫療機構" name="facility"/> 近醫療機構<br>
+    <input type="checkbox" value="無障礙空間" name="facility"/> 無障礙空間<br>
+  </div>    
+  
+  <br>  
+
+  <input type='submit' name="send" value='送出表單'>
+
+  </font><br>  
+  </div>   
+</form>
+</body>
+</html>
+
